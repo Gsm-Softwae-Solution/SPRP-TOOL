@@ -1,0 +1,1478 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#070b14;
+color:#fff;
+}
+
+.gsm-container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.hero{
+background:linear-gradient(135deg,#08111f,#0f2238,#07131f);
+border:1px solid #00eaff55;
+border-radius:25px;
+padding:35px;
+box-shadow:0 0 35px rgba(0,234,255,.25);
+overflow:hidden;
+position:relative;
+}
+
+.hero:before{
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+background:#00eaff22;
+filter:blur(90px);
+top:-150px;
+right:-120px;
+animation:move 8s infinite alternate;
+}
+
+@keyframes move{
+100%{
+transform:translate(-80px,80px);
+}
+}
+
+.logo{
+font-size:34px;
+font-weight:700;
+color:#00eaff;
+text-shadow:0 0 20px #00eaff;
+}
+
+.subtitle{
+color:#ccc;
+margin-top:8px;
+}
+
+.toolbox{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:30px;
+}
+
+@media(max-width:800px){
+.toolbox{
+grid-template-columns:1fr;
+}
+}
+
+.card{
+background:#111b2d;
+border:1px solid #00eaff33;
+padding:25px;
+border-radius:20px;
+}
+
+.toolimg{
+    width:100%;
+    height:auto;
+    max-height:500px;
+    object-fit:contain;
+    border-radius:15px;
+    background:#0b1220;
+}
+  
+.badge{
+display:inline-block;
+padding:8px 18px;
+background:#00ff99;
+color:#000;
+border-radius:30px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.download-btn{
+display:inline-block;
+margin-top:20px;
+padding:16px 40px;
+background:linear-gradient(90deg,#00eaff,#00ff99);
+color:#000;
+text-decoration:none;
+font-weight:bold;
+border-radius:40px;
+transition:.3s;
+}
+
+.download-btn:hover{
+transform:scale(1.05);
+}
+
+.info{
+margin:12px 0;
+}
+
+.counter{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:25px;
+}
+
+.counter div{
+background:#18263c;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+.counter h2{
+color:#00eaff;
+}
+
+.section-title{
+text-align:center;
+margin:60px 0 30px;
+font-size:30px;
+color:#00eaff;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.feature{
+background:#111b2d;
+padding:20px;
+border-radius:18px;
+border:1px solid #00eaff33;
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateY(-6px);
+box-shadow:0 0 20px #00eaff55;
+}
+
+.feature h3{
+margin-bottom:10px;
+color:#00ff99;
+}
+<!doctype html>
+
+
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#070707;
+font-family:Arial,sans-serif;
+color:#fff;
+}
+
+/* ===== GSM TASKBAR ===== */
+#gsm-bar{
+width:100%;
+min-height:72px;
+background:linear-gradient(180deg,#111,#050505);
+border-radius:18px;
+border:1px solid rgba(0,255,255,0.25);
+padding:12px 18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+position:relative;
+box-shadow:
+0 0 12px #00ffff55,
+inset 0 0 12px #00ffff22,
+0 0 30px #7a00ff33;
+overflow:visible;
+}
+
+#gsm-bar::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:2px;
+background:linear-gradient(90deg,transparent,#00ffff,#8a2eff,transparent);
+animation:gsmline 4s linear infinite;
+}
+
+@keyframes gsmline{
+100%{left:100%;}
+}
+
+/* LEFT */
+.gsm-left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.gsm-icon{
+width:42px;
+height:42px;
+border-radius:12px;
+background:linear-gradient(135deg,#00ffff,#7a00ff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+font-weight:bold;
+box-shadow:
+0 0 15px #00ffff88,
+0 0 25px #7a00ff66;
+}
+
+.gsm-title{
+font-size:24px;
+font-weight:900;
+letter-spacing:2px;
+text-shadow:
+0 0 10px #00ffff,
+0 0 20px #7a00ff;
+}
+
+/* MENU */
+.gsm-menu{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+gap:10px;
+position:relative;
+}
+
+.gsm-menu a,
+.gsm-menu button{
+text-decoration:none;
+padding:10px 16px;
+border-radius:12px;
+background:#101010;
+color:#fff;
+font-size:13px;
+font-weight:bold;
+border:1px solid #222;
+transition:.3s;
+cursor:pointer;
+box-shadow:
+inset 0 0 8px #00ffff11,
+0 0 8px #000;
+}
+
+.gsm-menu a:hover,
+.gsm-menu button:hover{
+background:linear-gradient(135deg,#00ffff,#7a00ff);
+transform:translateY(-2px);
+box-shadow:
+0 0 12px #00ffff,
+0 0 20px #7a00ff;
+}
+
+/* USER POPUP */
+#gsmPopup{
+position:absolute;
+top:65px;
+right:0;
+width:270px;
+background:#0b0b0b;
+border-radius:16px;
+padding:18px;
+display:none;
+z-index:99999;
+border:1px solid #00ffff33;
+box-shadow:
+0 0 20px #00ffff44,
+0 0 30px #7a00ff33;
+}
+
+.gsm-pop-user{
+font-size:22px;
+font-weight:bold;
+color:#00ffff;
+margin-bottom:5px;
+}
+
+.gsm-pop-email{
+font-size:13px;
+color:#aaa;
+margin-bottom:15px;
+word-break:break-word;
+}
+
+.gsm-pop-menu{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.gsm-pop-menu a,
+.gsm-pop-menu button{
+text-decoration:none;
+text-align:center;
+padding:10px;
+border-radius:10px;
+background:#121212;
+color:#fff;
+border:1px solid #222;
+cursor:pointer;
+}
+
+.gsm-pop-menu a:hover,
+.gsm-pop-menu button:hover{
+background:linear-gradient(135deg,#00ffff,#7a00ff);
+}
+
+/* LOGIN MODAL */
+#gsmLoginModal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999999;
+padding:15px;
+}
+
+.gsm-login-box{
+width:100%;
+max-width:360px;
+background:#0d0d0d;
+border:1px solid #00ffff33;
+border-radius:18px;
+padding:25px;
+position:relative;
+box-shadow:
+0 0 25px #00ffff33,
+0 0 40px #7a00ff22;
+}
+
+.gsm-close{
+position:absolute;
+right:15px;
+top:10px;
+font-size:18px;
+color:red;
+cursor:pointer;
+}
+
+.gsm-login-title{
+text-align:center;
+margin-bottom:20px;
+font-size:24px;
+font-weight:bold;
+color:#00ffff;
+text-shadow:0 0 10px #00ffff;
+}
+
+.gsm-input{
+width:100%;
+padding:13px;
+margin-bottom:12px;
+border:none;
+outline:none;
+border-radius:10px;
+background:#1b1b1b;
+color:#fff;
+font-size:14px;
+}
+
+.gsm-login-btn{
+width:100%;
+padding:13px;
+border:none;
+border-radius:10px;
+background:linear-gradient(135deg,#00ffff,#7a00ff);
+font-weight:bold;
+color:#fff;
+cursor:pointer;
+font-size:14px;
+}
+
+.gsm-login-btn:hover{
+opacity:.9;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+#gsm-bar{
+flex-direction:column;
+justify-content:center;
+}
+
+.gsm-title{
+font-size:18px;
+text-align:center;
+}
+
+.gsm-menu{
+justify-content:center;
+}
+
+.gsm-menu a,
+.gsm-menu button{
+font-size:12px;
+padding:8px 12px;
+}
+
+#gsmPopup{
+right:auto;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+max-width:300px;
+}
+
+}
+</style>
+
+
+
+<!-- ===== TASKBAR ===== -->
+<div id="gsm-bar">
+
+<div class="gsm-left">
+<div class="gsm-icon">GSM</div>
+<div class="gsm-title">SECURITY REMOVE PRO TOOL</div>
+</div>
+
+<div class="gsm-menu">
+
+<a href="https://gsmssss.blogspot.com/" target="_blank">GSM SOFTWARE SOLUTION</a>
+<a href="https://samim123456a.github.io/Supported-Brands/" target="_blank">SUPPORTED BRAND</a>
+<a href="https://drive.google.com/file/d/10B7KsBuMIv9jxQv4nESpcbOXomAb1mFn/view" target="_blank">DOWNLOAD</a>
+<a href="https://wa.me/8801410922421" target="_blank">RESELLER</a>
+
+    
+<a href="javascript:void(0)" class="login-btn" onclick="openLogin()">
+🔐 Login
+</a>
+
+<button id="registerBtn"
+onclick="window.location.href='https://gsmssss.blogspot.com/p/register_052485709.html'">
+REGISTER
+</button>
+
+<!-- USER POPUP -->
+<div id="gsmPopup">
+
+<div class="gsm-pop-user" id="popupUsername">
+User
+</div>
+
+<div class="gsm-pop-email" id="popupEmail">
+user@gmail.com
+</div>
+
+<div class="gsm-pop-menu">
+
+<a href="https://gsmssss.blogspot.com/p/my-account_01276544710.html">
+MY ACCOUNT
+</a>
+
+<button onclick="openWhatsApp('Add Balance Request')">
+ADD BALANCE
+</button>
+
+<button>
+ORDER HISTORY
+</button>
+
+<button id="logoutBtn">
+LOGOUT
+</button>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ===== LOGIN MODAL ===== -->
+<div id="gsmLoginModal">
+
+<div class="gsm-login-box">
+
+<div class="gsm-close" id="closeLogin">✖</div>
+
+<div class="gsm-login-title">
+GSM LOGIN
+</div>
+
+<input type="email" 
+id="loginEmail" 
+class="gsm-input" 
+placeholder="Email Address" />
+
+<input type="password" 
+id="loginPassword" 
+class="gsm-input" 
+placeholder="Password" />
+
+<button class="gsm-login-btn"
+id="gsmLoginSubmit">
+LOGIN NOW
+</button>
+
+</div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+
+import {
+getAuth,
+onAuthStateChanged,
+signInWithEmailAndPassword,
+signOut
+}
+from "https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyD2ytWiDq_XmMfPIKwjspdX-e5vo1-z_2U",
+authDomain: "gsm-software-solution-1ad51.firebaseapp.com",
+projectId: "gsm-software-solution-1ad51",
+storageBucket: "gsm-software-solution-1ad51.firebasestorage.app",
+messagingSenderId: "237158469444",
+appId: "1:237158469444:web:7b5501f2b8019fa5af5111",
+measurementId: "G-FRHH6FQ53H"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const loginBtn = document.getElementById("loginBtn");
+const registerBtn = document.getElementById("registerBtn");
+const popup = document.getElementById("gsmPopup");
+const loginModal = document.getElementById("gsmLoginModal");
+const popupUsername = document.getElementById("popupUsername");
+const popupEmail = document.getElementById("popupEmail");
+
+/* OPEN LOGIN */
+function openLogin(){
+loginModal.style.display = "flex";
+}
+
+/* CLOSE LOGIN */
+function closeLogin(){
+loginModal.style.display = "none";
+}
+
+if(loginBtn) loginBtn.addEventListener("click",()=>{
+
+if(loginBtn.dataset.loggedin === "true"){
+popup.style.display = popup.style.display === "block"
+? "none"
+: "block";
+}else{
+openLogin();
+}
+
+});
+
+/* CLOSE BUTTON */
+document.getElementById("closeLogin")
+.addEventListener("click",closeLogin);
+
+/* LOGIN */
+document.getElementById("gsmLoginSubmit")
+.addEventListener("click",async()=>{
+
+const email = document.getElementById("loginEmail").value;
+const password = document.getElementById("loginPassword").value;
+
+if(!email || !password){
+alert("Email & Password Required");
+return;
+}
+
+try{
+
+await signInWithEmailAndPassword(auth,email,password);
+
+alert("Login Success ✔");
+
+closeLogin();
+
+}catch(error){
+alert(error.message);
+}
+
+});
+
+/* AUTH STATE */
+onAuthStateChanged(auth,(user)=>{
+
+if(user){
+
+const username = user.email.split("@")[0];
+
+loginBtn.innerHTML = "👑 " + username;
+loginBtn.dataset.loggedin = "true";
+
+popupUsername.innerHTML = username;
+popupEmail.innerHTML = user.email;
+
+registerBtn.innerHTML = "LOGOUT";
+
+registerBtn.onclick = async function(e){
+e.preventDefault();
+
+await signOut(auth);
+alert("Logout Success ✔");
+location.reload();
+};
+
+}else{
+
+loginBtn.innerHTML = "LOGIN";
+loginBtn.dataset.loggedin = "false";
+
+registerBtn.innerHTML = "REGISTER";
+
+registerBtn.onclick = function(){
+window.location.href = 'https://gsmssss.blogspot.com/p/register_052485709.html';
+};
+
+popup.style.display = "none";
+
+}
+
+});
+
+/* POPUP LOGOUT */
+document.getElementById("logoutBtn")
+.addEventListener("click",async()=>{
+await signOut(auth);
+alert("Logout Success ✔");
+location.reload();
+});
+
+/* OUTSIDE CLICK */
+document.addEventListener("click",function(e){
+
+if(
+!popup.contains(e.target)
+&&
+!loginBtn.contains(e.target)
+){
+popup.style.display = "none";
+}
+
+if(e.target === loginModal){
+closeLogin();
+}
+
+});
+
+/* WHATSAPP */
+window.openWhatsApp = function(text){
+window.open(
+"https://wa.me/8801410922421?text=" + encodeURIComponent(text),
+"_blank"
+);
+}
+<!--===========================
+FOOTER
+===========================-->
+<footer style="background: rgb(11, 18, 32); border-top: 1px solid rgba(0, 234, 255, 0.2); margin-top: 80px; padding: 40px; text-align: center;">
+
+<h2 style="color: #00eaff;">
+SECURITY REMOVE PRO TOOL
+<p style="color: #cccccc; margin-top: 15px;">
+Developed By SK SHOHA
+</h2>
+<p style="color: #cccccc; margin-top: 15px;">
+Professional Mobile Servicing Platform
+</p>
+
+<br />
+
+<p style="color: #888888;">
+✔ Security Plugin Remove
+
+<br />
+
+✔ FRP Remove
+
+<br />
+
+✔ KG / MDM Remove
+
+<br />
+
+✔ Android 10 - Android 16 Supported
+
+</p>
+
+<br />
+
+</script>
+<div class="subtitle">
+Professional Mobile Software Download Center
+</div>
+
+<div class="toolbox">
+
+<div class="card">
+
+<span class="badge">
+LATEST VERSION
+</span>
+
+<h1>
+SECURITY PLUGIN REMOVE PRO
+</h1>
+
+<p class="info">✔ Android 10 - 16 Supported</p>
+
+<p class="info">✔ Latest 2026 Security Patch</p>
+
+<p class="info">✔ Security Plugin Remove</p>
+
+<p class="info">✔ FRP Remove</p>
+
+<p class="info">✔ KG / MDM Remove</p>
+
+<a class="download-btn" href="https://drive.google.com/file/d/10B7KsBuMIv9jxQv4nESpcbOXomAb1mFn/view?usp=drive_link">
+⬇ DOWNLOAD NOW
+</a>
+
+<div class="counter">
+
+<div>
+<h2>1.0.0</h2>
+Version
+</div>
+
+<div>
+<h2>58MB</h2>
+Size
+</div>
+
+<div>
+<h2>2026</h2>
+Update
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img class="toolimg" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbMXSQdk6eNqVR5YLwMqQEnJStrDcmKkkZSffMPAJdJ2womVPGyv1uyExegrOxyVS5s45MAVp1xycuUOCJXHF0FsTP-_vp4PRvjyVgF9P11OqGrSJloo_CZFDk3TliSW5AFLzjR2kDJ2rjtKZYS5vSxKka57GLTmL-1GGmxIPmx3mdxGBQnnnucYTHvzmg/s1600/Demo%20Final.png" />
+
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+Premium Features
+</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>Security Plugin Remove</h3>
+Latest supported models.
+</div>
+
+<div class="feature">
+<h3>FRP Remove</h3>
+One Click Operation.
+</div>
+
+<div class="feature">
+<h3>KG / MDM</h3>
+Latest Security Supported.
+</div>
+
+<div class="feature">
+<h3>Lifetime Updates</h3>
+Regular New Models.
+</div>
+
+</div>
+
+</div><!--===========================
+LICENSE ACTIVATION
+===========================-->
+
+<h2 class="section-title">
+License Activation
+</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>🥉 3 Months</h3>
+<h2 style="color: #00eaff;">$25</h2>
+<p>Full Premium Access</p>
+</div>
+
+<div class="feature">
+<h3>🥈 6 Months</h3>
+<h2 style="color: #00ff99;">$35</h2>
+<p>Most Popular Plan</p>
+</div>
+
+<div class="feature">
+<h3>🥇 12 Months</h3>
+<h2 style="color: gold;">$45</h2>
+<p>Unlimited Updates</p>
+</div>
+
+</div>
+
+<!--===========================
+TOOL INFORMATION
+===========================-->
+
+<h2 class="section-title">
+Tool Information
+</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>Tool Name</h3>
+<p>Security Plugin Remove Pro</p>
+</div>
+
+<div class="feature">
+<h3>Current Version</h3>
+<p>v1.0.0 Stable</p>
+</div>
+
+<div class="feature">
+<h3>Developer</h3>
+<p>GSM SOFTWARE SOLUTION</p>
+</div>
+
+<div class="feature">
+<h3>Last Update</h3>
+<p>June 2026</p>
+</div>
+
+<div class="feature">
+<h3>Android Support</h3>
+<p>Android 10 - Android 16</p>
+</div>
+
+<div class="feature">
+<h3>Security Patch</h3>
+<p>Latest 2026 Supported</p>
+</div>
+
+</div>
+
+<!--===========================
+SUPPORTED BRANDS
+===========================-->
+
+<h2 class="section-title">
+Supported Brands
+</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>Samsung</h3>
+<p>Latest Models Supported</p>
+</div>
+
+<div class="feature">
+<h3>Xiaomi</h3>
+<p>HyperOS Supported</p>
+</div>
+
+<div class="feature">
+<h3>Infinix</h3>
+<p>Android 15 / 16</p>
+</div>
+
+<div class="feature">
+<h3>Tecno</h3>
+<p>Latest Security Patch</p>
+</div>
+
+<div class="feature">
+<h3>Realme</h3>
+<p>Latest Supported</p>
+</div>
+
+<div class="feature">
+<h3>OPPO</h3>
+<p>Latest Supported</p>
+</div>
+
+</div>
+
+<!--===========================
+SYSTEM REQUIREMENTS
+===========================-->
+
+<h2 class="section-title">
+System Requirements
+</h2>
+
+<div class="card">
+
+<p>✅ Windows 10 / Windows 11 (64-bit)</p>
+<hr style="border-color: rgba(0, 234, 255, 0.133); margin: 15px 0px;" />
+
+<p>✅ Microsoft .NET Runtime Installed</p>
+<hr style="border-color: rgba(0, 234, 255, 0.133); margin: 15px 0px;" />
+
+<p>✅ Qualcomm &amp; MTK USB Drivers</p>
+<hr style="border-color: rgba(0, 234, 255, 0.133); margin: 15px 0px;" />
+
+<p>✅ Stable Internet Connection</p>
+<hr style="border-color: rgba(0, 234, 255, 0.133); margin: 15px 0px;" />
+
+<p>✅ Minimum 4GB RAM (8GB Recommended)</p>
+<hr style="border-color: rgba(0, 234, 255, 0.133); margin: 15px 0px;" />
+
+<p>✅ USB Debugging / BROM Mode Supported</p>
+
+</div>
+
+<!--===========================
+LIVE STATUS
+===========================-->
+
+<h2 class="section-title">
+Server Status
+</h2>
+
+<div class="card" style="text-align: center;">
+
+<h2 style="color: #00ff99;">
+🟢 ONLINE
+</h2>
+
+<p style="margin-top: 15px;">
+All Services Running Normally
+</p>
+
+<p style="color: #00eaff; margin-top: 10px;">
+Last Checked : Just Now
+</p>
+
+</div><!--===========================
+SCREENSHOT GALLERY
+===========================-->
+
+<h2 class="section-title">
+Tool Screenshots
+</h2>
+
+<style>
+
+.slider{
+    width:100%;
+    overflow:hidden;
+    border-radius:20px;
+    border:1px solid #00eaff44;
+    background:#0b1220;
+}
+
+.slides{
+    display:flex;
+    width:max-content;
+    animation:scrollSlider 40s linear infinite;
+}
+
+.slides:hover{
+    animation-play-state:paused;
+}
+
+.slides img{
+    width:700px;
+    height:auto;
+    object-fit:contain;
+    margin-right:20px;
+    border-radius:15px;
+}
+
+@keyframes scrollSlider{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+.popup{
+
+display:none;
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.85);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+}
+
+.popup-box{
+
+background:#101827;
+
+padding:35px;
+
+width:90%;
+
+max-width:450px;
+
+border-radius:20px;
+
+text-align:center;
+
+border:1px solid #00eaff;
+
+}
+
+.popup-btn{
+
+display:inline-block;
+
+padding:14px 35px;
+
+background:linear-gradient(90deg,#00eaff,#00ff99);
+
+border-radius:40px;
+
+font-weight:bold;
+
+color:#000;
+
+text-decoration:none;
+
+margin-top:20px;
+
+}
+
+.close-btn{
+
+margin-top:15px;
+
+background:#ff3b3b;
+
+color:#fff;
+
+border:none;
+
+padding:12px 30px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+}
+
+.whatsapp{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:65px;
+
+height:65px;
+
+background:#25D366;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+text-decoration:none;
+
+color:#fff;
+
+box-shadow:0 0 20px #25D366;
+
+z-index:99999;
+
+}
+
+.faq-item{
+
+background:#111b2d;
+
+margin-bottom:15px;
+
+padding:20px;
+
+border-radius:15px;
+
+border:1px solid #00eaff33;
+
+cursor:pointer;
+
+}
+
+.faq-content{
+
+display:none;
+
+padding-top:15px;
+
+color:#ccc;
+
+}
+
+</style>
+
+<div class="slider">
+    <div class="slides">
+
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbMXSQdk6eNqVR5YLwMqQEnJStrDcmKkkZSffMPAJdJ2womVPGyv1uyExegrOxyVS5s45MAVp1xycuUOCJXHF0FsTP-_vp4PRvjyVgF9P11OqGrSJloo_CZFDk3TliSW5AFLzjR2kDJ2rjtKZYS5vSxKka57GLTmL-1GGmxIPmx3mdxGBQnnnucYTHvzmg/s1600/Demo%20Final.png">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhK4DRiJnXv3Vzr691M8LD9hnXFeVW7GRCcjMU2YMzkllfJOoxh3jf-I2d9etD9msYot1O6xk_J8Ec8Io0Uls3Mt8LobLXS3xgOQTqI5EqGh2lgF6D6GyzXdZwCEfNLrgr8Vq8xQzJ8sfLFXsy-pCWOg2JMrtuWkZXdWCTIblG2_54I-cdJwOAIeOQ9Z0tg/s1536/732069035_1479104044017133_7662071754224885883_n.jpg">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbMXSQdk6eNqVR5YLwMqQEnJStrDcmKkkZSffMPAJdJ2womVPGyv1uyExegrOxyVS5s45MAVp1xycuUOCJXHF0FsTP-_vp4PRvjyVgF9P11OqGrSJloo_CZFDk3TliSW5AFLzjR2kDJ2rjtKZYS5vSxKka57GLTmL-1GGmxIPmx3mdxGBQnnnucYTHvzmg/s1600/Demo%20Final.png">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLbMhdcgXh9pMmRRQ_Jv3QHShGx3a_N50W9A0m7BBALDbixn1rPRWmTw4LA4BpL8LNe_Oh-Nq9vZ9JGAgs6QeB75FLOl7VY46HLyp9ggKUlltojHanTNxIKyrOU7jBg-NIAvX9EFube5Eg1IdEP9SfjvP1I6i0CoIKEinRZCzWt33GMr1DchnW37ejcrpr/s1600/Login%20Page%20Final.png">
+
+        <!-- একই ছবি আবার -->
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbMXSQdk6eNqVR5YLwMqQEnJStrDcmKkkZSffMPAJdJ2womVPGyv1uyExegrOxyVS5s45MAVp1xycuUOCJXHF0FsTP-_vp4PRvjyVgF9P11OqGrSJloo_CZFDk3TliSW5AFLzjR2kDJ2rjtKZYS5vSxKka57GLTmL-1GGmxIPmx3mdxGBQnnnucYTHvzmg/s1600/Demo%20Final.png">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhK4DRiJnXv3Vzr691M8LD9hnXFeVW7GRCcjMU2YMzkllfJOoxh3jf-I2d9etD9msYot1O6xk_J8Ec8Io0Uls3Mt8LobLXS3xgOQTqI5EqGh2lgF6D6GyzXdZwCEfNLrgr8Vq8xQzJ8sfLFXsy-pCWOg2JMrtuWkZXdWCTIblG2_54I-cdJwOAIeOQ9Z0tg/s1536/732069035_1479104044017133_7662071754224885883_n.jpg">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbMXSQdk6eNqVR5YLwMqQEnJStrDcmKkkZSffMPAJdJ2womVPGyv1uyExegrOxyVS5s45MAVp1xycuUOCJXHF0FsTP-_vp4PRvjyVgF9P11OqGrSJloo_CZFDk3TliSW5AFLzjR2kDJ2rjtKZYS5vSxKka57GLTmL-1GGmxIPmx3mdxGBQnnnucYTHvzmg/s1600/Demo%20Final.png">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLbMhdcgXh9pMmRRQ_Jv3QHShGx3a_N50W9A0m7BBALDbixn1rPRWmTw4LA4BpL8LNe_Oh-Nq9vZ9JGAgs6QeB75FLOl7VY46HLyp9ggKUlltojHanTNxIKyrOU7jBg-NIAvX9EFube5Eg1IdEP9SfjvP1I6i0CoIKEinRZCzWt33GMr1DchnW37ejcrpr/s1600/Login%20Page%20Final.png">
+
+    </div>
+</div>
+
+</div>
+
+<br /><br />
+
+<div class="download-card">
+
+<h2 style="color: #00eaff;">
+SECURITY PLUGIN REMOVE PRO
+</h2>
+
+<br />
+
+<p>Version : 1.0.0 Stable</p>
+
+<p>File Size : 18 MB</p>
+
+<p>Last Update : June 2026</p>
+
+<p>Password : Knok On Whatsapp</p>
+
+<br />
+
+<a class="download-btn" href="javascript:void(0)" onclick="openPopup()">
+
+⬇ DOWNLOAD NOW
+
+</a>
+
+</div>
+
+<br /><br />
+
+<h2 class="section-title">
+
+FAQ
+
+</h2>
+
+<div class="faq-item" onclick="faq(this)">
+
+<b>Is this tool free?</b>
+
+<div class="faq-content">
+
+No. License Activation Required.
+
+</div>
+
+</div>
+
+<div class="faq-item" onclick="faq(this)">
+
+<b>Supports Android 16?</b>
+
+<div class="faq-content">
+
+Yes. Android 10-16 Supported.
+
+</div>
+
+</div>
+
+<div class="faq-item" onclick="faq(this)">
+
+<b>Latest Security Patch?</b>
+
+<div class="faq-content">
+
+Latest 2026 Security Patch Supported.
+
+</div>
+
+</div>
+
+<div class="faq-item" onclick="faq(this)">
+
+<b>Need Internet?</b>
+
+<div class="faq-content">
+
+Yes. Internet Required.
+
+</div>
+
+</div>
+
+<div class="popup" id="popup">
+
+<div class="popup-box">
+
+<h2 style="color: #00eaff;">
+
+Download Ready
+
+</h2>
+
+<br />
+
+<p>
+
+Click Continue to Download
+
+</p>
+
+<a class="popup-btn" href="https://drive.google.com/file/d/10B7KsBuMIv9jxQv4nESpcbOXomAb1mFn/view?usp=drive_link">
+
+Continue Download
+
+</a>
+
+<br />
+
+<button class="close-btn" onclick="closePopup()">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/8801410922421" target="_blank">
+
+💬
+
+</a>
+
+<script>
+
+function openPopup(){
+
+document.getElementById("popup").style.display="flex";
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").style.display="none";
+
+}
+
+function faq(e){
+
+let c=e.querySelector(".faq-content");
+
+c.style.display=c.style.display=="block"?"none":"block";
+
+}
+
+</script><!--===========================
+LIVE DOWNLOAD COUNTER
+===========================-->
+
+<h2 class="section-title">
+Community Statistics
+</h2>
+
+<div class="counter">
+
+<div>
+<h2 id="d1">0</h2>
+Downloads
+</div>
+
+<div>
+<h2 id="d2">0</h2>
+Active Users
+</div>
+
+<div>
+<h2 id="d3">0</h2>
+Countries
+</div>
+
+</div>
+
+<!--===========================
+SOCIAL CONTACT
+===========================-->
+
+<h2 class="section-title">
+Contact &amp; Support
+</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>💬 WhatsApp</h3>
+<p>+8801410922421</p>
+</div>
+
+<div class="feature">
+<h3>🌐 Website</h3>
+<p>gsmssss.blogspot.com</p>
+</div>
+
+<div class="feature">
+<h3>📧 Email</h3>
+<p>support@gsmsoftware.com</p>
+</div>
+
+<div class="feature">
+<h3>🕒 Support</h3>
+<p>24/7 Available</p>
+</div>
+
+</div>
+
+
+<p style="color: #666666;">
+© 2026 GSM SOFTWARE SOLUTION
+All Rights Reserved.
+</p>
+
+</footer>
+
+<!--===========================
+BACK TO TOP
+===========================-->
+
+<button id="topBtn" style="background: rgb(0, 234, 255); border-radius: 50%; border: medium; bottom: 100px; box-shadow: rgb(0, 234, 255) 0px 0px 20px; cursor: pointer; display: none; font-size: 24px; height: 55px; position: fixed; right: 25px; width: 55px; z-index: 9999;">
+
+↑
+
+</button>
+
+<script>
+
+function counter(id,target){
+
+let i=0;
+
+let t=setInterval(function(){
+
+i+=Math.ceil(target/80);
+
+if(i>=target){
+
+i=target;
+
+clearInterval(t);
+
+}
+
+document.getElementById(id).innerHTML=i.toLocaleString();
+
+},20);
+
+}
+
+counter("d1",25489);
+
+counter("d2",6132);
+
+counter("d3",96);
+
+window.onscroll=function(){
+
+let b=document.getElementById("topBtn");
+
+if(document.documentElement.scrollTop>400){
+
+b.style.display="block";
+
+}else{
+
+b.style.display="none";
+
+}
+
+}
+
+document.getElementById("topBtn").onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+</script>
